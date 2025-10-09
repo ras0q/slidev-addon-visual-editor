@@ -26,7 +26,7 @@ export default defineConfig(() => ({
               continue
             }
 
-            if (token.type.endsWith("_open") && token.tag !== "") {
+            if (token.type.endsWith("_open") && token.type !== "list_item_open" && token.tag !== "") {
               if (!token.attrs) token.attrs = []
               token.attrs.push([attr, `${token.tag}-${token.map[0]}-${token.map[1]}`])
             }
